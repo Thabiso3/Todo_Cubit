@@ -35,7 +35,7 @@ class TodoHeader extends StatelessWidget {
       children: [
         Text(
           'Todo',
-          style: TextStyle(fontSize: 40.0),
+          style: TextStyle(fontSize: 30.0),
         ),
         // BlocBuilder<ActiveTodoCountCubit, ActiveTodoCountState>(
         //   builder: (context, state) {
