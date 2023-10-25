@@ -8,11 +8,12 @@ part 'todo_list_state.dart';
 class TodoListCubit extends Cubit<TodoListState> {
   TodoListCubit() : super(TodoListState.initial()); // fuctions to change state
 
-  void addTdo(String todoDesc) {
+  void addTodo(String todoDesc) {
     final newTodo = Todo(desc: todoDesc);
     final newTodos = [...state.todos, newTodo];
 
     emit(state.copyWith(todos: newTodos));
+    print(state);
   }
 
   void editTodo(String id, String todoDesc) {
