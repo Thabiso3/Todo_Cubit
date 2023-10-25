@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:todo_cubit/cubits/cubits.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'pages/todos_page.dart';
+import 'pages/todos_page/todos_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +20,8 @@ class MyApp extends StatelessWidget {
         BlocProvider<TodoListCubit>(create: (context) => TodoListCubit()),
         BlocProvider<ActiveTodoCountCubit>(
           create: (context) => ActiveTodoCountCubit(
+              initialActiveTodoCount:
+                  context.read<TodoListCubit>().state.todos.length,
               todoListCubit: BlocProvider.of<TodoListCubit>(context)),
         ),
         BlocProvider<FilteredTodosCubit>(
